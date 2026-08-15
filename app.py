@@ -6,6 +6,10 @@ st.set_page_config(
     layout="wide"
 )
 
+# --------------------------------------------------
+# PAGE DEFINITIONS
+# --------------------------------------------------
+
 home = st.Page(
     "pages/home.py",
     title="Home",
@@ -24,10 +28,39 @@ dashboard = st.Page(
     icon="📊"
 )
 
+prediction = st.Page(
+    "pages/prediction.py",
+    title="New Prediction",
+    icon="🩺"
+)
+
+results = st.Page(
+    "pages/results.py",
+    title="Results",
+    icon="🔍"
+)
+
+history = st.Page(
+    "pages/history.py",
+    title="History",
+    icon="📋"
+)
+
+# --------------------------------------------------
+# NAVIGATION
+# --------------------------------------------------
+
 pg = st.navigation([
     home,
     login,
-    dashboard
+    dashboard,
+    prediction,
+    results,
+    history
 ])
+
+# --------------------------------------------------
+# RUN APP
+# --------------------------------------------------
 
 pg.run()
